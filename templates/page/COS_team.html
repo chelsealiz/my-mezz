@@ -1,0 +1,87 @@
+{% extends "base.html" %}{% load thumbnail %}{% load cropping %}{% load staticfiles %}
+{% block title %}About Our Team {% endblock %}
+{% block description %}The Center for Open Science team is diverse in background and skills, all devoted to increasing the Openness, Reproducibility, and Integrity in science. {% endblock %}
+
+{% block navlinks %}{% with 'about' as nav %}
+        {{ block.super }}
+{% endwith %}{% endblock %}{% block content %}
+
+{% block stylesheets %}
+    <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+    <link href="{% static '/static/plugins/fancybox/source/jquery.fancybox.css' %}" rel="stylesheet" />
+    <!-- END PAGE LEVEL PLUGIN STYLES -->
+{% endblock %}
+
+    <!-- BEGIN PAGE CONTAINER -->
+<div class="page-container">
+
+<!-- BEGIN CONTAINER -->
+<div class="container min-hight margin-top-50">
+
+<!-- BEGIN OUR TEAM -->
+<div class="row front-team">
+<h1><strong>The COS Team</strong></h1>
+<p class="lead">Astronomers, biologists, chemists, computer scientists, education researchers, engineers, neuroscientists, and psychologists have come together to provide tools and services that benefit all sciences.</p>
+<div class="container">
+    <div class="row" >
+        {% for image in images %}
+            <li class="col-md-3 space-mobile" >
+                <div class="thumbnail">
+                    <div class="circular" style="background: url({% cropped_thumbnail image "min_free_cropping" max_size=image.get_thumb_max_size %}); width: {{ image.thumb_image_width }}px; height: {{ image.thumb_image_height }}px"></div>
+                    <h3>{{ image.name }}</h3>
+                    <h5>{{ image.position }}</h5>
+
+                    <ul class="social-icons social-icons-color" >
+                        {% if image.linkedin_url %}
+                            <li> <a href="{{ image.linkedin_url }}" target="_blank" data-original-title="Linkedin" class="linkedin"></a> </li>
+                        {% endif %}
+                        {% if image.twitter_url %}
+                            <li> <a href="{{ image.twitter_url }}" target="_blank" data-original-title="twitter" class="twitter"></a></li>
+                        {% endif %}
+                        {% if image.tumblr_url %}
+                            <li> <a href="{{ image.tumblr_url }}" target="_blank" data-original-title="tumblr" class="tumblr"></a></li>
+                        {% endif %}
+                        {% if image.github_url %}
+                            <li> <a href="{{ image.github_url }}" target="_blank" data-original-title="github" class="github"></a></li>
+                        {% endif %}
+                        {% if image.google_url %}
+                            <li> <a href="{{ image.google_url }}" target="_blank" data-original-title="Goole Plus" class="googleplus"></a></li>
+                        {% endif %}
+                        {% if image.OSF_url %}
+                            <li> <a href="{{ image.OSF_url }}" target="_blank" data-original-title="osf" class="osf"></a></li>
+                        {% endif %}
+                        {% if image.personal_Email %}
+                           <li>  <a href="{{ image.personal_Email }}" target="_blank" data-original-title="email" class="email"></a></li>
+                        {% endif %}
+                        {% if image.facebook_url %}
+                            <li> <a href="{{ image.facebook_url }}" target="_blank" data-original-title="Facebook" class="facebook"></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </li>
+{#            {% if forloop.counter|divisibleby:4 %}#}
+{#                </div>#}
+{#            {% endif %}#}
+      {% endfor %}
+</div>
+</div>
+    </div>
+</div>
+
+
+
+
+    <br/><br/><br/><br/>
+{% endblock %}
+
+{% block javascript_bottom %}
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS(REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script type="text/javascript" src="{% static '/static/plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static '/static/scripts/app.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+{% endblock %}

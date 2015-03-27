@@ -1,0 +1,9 @@
+
+gunicorn==0.16.1
+django-image-cropping
+easy_thumbnails
+django-admin-sortable
+django-suit
+
+
+

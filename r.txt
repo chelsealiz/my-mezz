@@ -1,0 +1,9 @@
+django
+gunicorn==0.16.1
+django-image-cropping
+easy_thumbnails
+-e git+git://github.com/FrancoisConstant/django-twitter-feed.git#egg=django-twitter-feed
+tweepy
+dj-database-url
+dj-static
+django-google-maps
