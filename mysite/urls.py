@@ -1,15 +1,15 @@
 from __future__ import unicode_literals
 from django.conf import settings
 from django.contrib import admin
-from mysite.main import views
-from mezzanine.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from mysite.main import views
+from mezzanine.conf import settings
 from mysite.main.views import AboutBoardPageView, AboutPageView, MissionPageView, PartnersPageView, \
-    ServicePageView, GetInvolvedPageView, ApsPageView, CommunitiesPageView,  \
-    InvolvedParticipatesPageView, SponsorsPageView, StatsPageView, PrPageView, OurPictureView, JobsPageView,  \
+    ServicePageView, GetInvolvedPageView, ApsPageView, CommunitiesPageView, \
+    InvolvedParticipatesPageView, SponsorsPageView, StatsPageView, PrPageView, OurPictureView, JobsPageView, \
     AmbassadorsPageView, NewsPageView
 
 
@@ -20,54 +20,50 @@ admin.autodiscover()
 # to the project's homepage.
 
 urlpatterns = i18n_patterns("",
-    # Change the admin prefix here to use an alternate URL for the
-    # admin interface, which would be marginally more secure.
-    ("^admin/", include(admin.site.urls)),
+                            # Change the admin prefix here to use an alternate URL for the
+                            # admin interface, which would be marginally more secure.
+                            ("^admin/", include(admin.site.urls)),
 )
 
 urlpatterns += patterns('',
 
-    # We don't want to presume how your homepage works, so here are a
-    # few patterns you can use to set it up.
+                        # We don't want to presume how your homepage works, so here are a
+                        # few patterns you can use to set it up.
 
-    # HOMEPAGE AS STATIC TEMPLATE
-    # ---------------------------
-    # This pattern simply loads the index.html template. It isn't
-    # commented out like the others, so it's the default. You only need
-    # one homepage pattern, so if you use a different one, comment this
-    # one out.
-
-
-    url("^$", views.HomepageView.as_view(), {"template": "page/index.html"}, name="home"),
-    url(r'^(?i)$', views.HomepageView.as_view(), name='homepage'),
-    url(r'^(?i)aps', ApsPageView.as_view(), name='aps'),
-    url(r'^(?i)jobs$', JobsPageView.as_view(), name='jobs'),
-    url(r'^(?i)news$', NewsPageView.as_view(), name='news'),
-    url(r'^(?i)about$', AboutPageView.as_view(), name='about'),
-    url(r'^(?i)service$', ServicePageView.as_view(), name='service'),
-    url(r'^(?i)pr/(?P<item>.*)/$', PrPageView.as_view(), name='pr'),
-    url(r'^(?i)about_board$', AboutBoardPageView.as_view(), name = 'about_board'),
-    url(r'^(?i)about_team$', OurPictureView.as_view(), name='our_picture'),
-    url(r'^(?i)communities$', CommunitiesPageView.as_view(), name='communities'),
-    url(r'^(?i)ambassadors$', AmbassadorsPageView.as_view(), name='ambassadors'),
-    url(r'^(?i)about_mission$', MissionPageView.as_view(), name='about_mission'),
-    url(r'^(?i)get_invovled$', GetInvolvedPageView.as_view(), name='get_involved'),
-    url(r'^(?i)about_partners$', PartnersPageView.as_view(), name='about_partners'),
-    url(r'^(?i)about_sponsors$', SponsorsPageView.as_view(), name='about_sponsors'),
-    url(r'^(?i)stats_consulting$', StatsPageView.as_view(), name='stats_consulting'),
-    url(r'^(?i)involved_participate$', InvolvedParticipatesPageView.as_view(), name='involved_participate'),
+                        # HOMEPAGE AS STATIC TEMPLATE
+                        # ---------------------------
+                        # This pattern simply loads the index.html template. It isn't
+                        # commented out like the others, so it's the default. You only need
+                        # one homepage pattern, so if you use a different one, comment this
+                        # one out.
 
 
+                        url("^$", views.HomepageView.as_view(), {"template": "page/index.html"}, name="home"),
+                        url(r'^(?i)$', views.HomepageView.as_view(), name='homepage'),
+                        url(r'^(?i)aps', ApsPageView.as_view(), name='aps'),
+                        url(r'^(?i)jobs$', JobsPageView.as_view(), name='jobs'),
+                        url(r'^(?i)news$', NewsPageView.as_view(), name='news'),
+                        url(r'^(?i)about$', AboutPageView.as_view(), name='about'),
+                        url(r'^(?i)service$', ServicePageView.as_view(), name='service'),
+                        url(r'^(?i)pr/(?P<item>.*)/$', PrPageView.as_view(), name='pr'),
+                        url(r'^(?i)about_board$', AboutBoardPageView.as_view(), name='about_board'),
+                        url(r'^(?i)about_team$', OurPictureView.as_view(), name='our_picture'),
+                        url(r'^(?i)communities$', CommunitiesPageView.as_view(), name='communities'),
+                        url(r'^(?i)ambassadors$', AmbassadorsPageView.as_view(), name='ambassadors'),
+                        url(r'^(?i)about_mission$', MissionPageView.as_view(), name='about_mission'),
+                        url(r'^(?i)get_invovled$', GetInvolvedPageView.as_view(), name='get_involved'),
+                        url(r'^(?i)about_partners$', PartnersPageView.as_view(), name='about_partners'),
+                        url(r'^(?i)about_sponsors$', SponsorsPageView.as_view(), name='about_sponsors'),
+                        url(r'^(?i)stats_consulting$', StatsPageView.as_view(), name='stats_consulting'),
+                        url(r'^(?i)involved_participate$', InvolvedParticipatesPageView.as_view(),
+                            name='involved_participate'),
 
 
-
-    ("^", include("mezzanine.generic.urls")),
-
+                        ("^", include("mezzanine.generic.urls")),
 
 
-
-    url("^admin/", include(admin.site.urls)),
-    ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                        url("^admin/", include(admin.site.urls)), ) + static \
+    (settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += staticfiles_urlpatterns()
 
@@ -75,19 +71,16 @@ if settings.DEBUG:
     urlpatterns += patterns('',
                             url(r'media/(?P<path>.*)$', 'django.views.static.serve', {
                                 'document_root': settings.MEDIA_ROOT,
-                                }),
-                            )
+                            }),
+    )
 
 if settings.DEBUG:
     urlpatterns += patterns('',
                             url(r'^static/(?P<path>.*)$', 'django.views.static.serve'),
-                            )
+    )
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root': settings.MEDIA_ROOT,
     }),
-
-
-
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -143,27 +136,24 @@ if settings.DEBUG:
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
 
-
-
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
 handler404 = "mezzanine.core.views.page_not_found"
 handler500 = "mezzanine.core.views.server_error"
 
-
-
 if "django.contrib.admin" in settings.INSTALLED_APPS:
     from django import VERSION
+
     if VERSION < (1, 6):
         reset_pattern = "^reset/(?P<uidb36>[-\w]+)/(?P<token>[-\w]+)/$"
     else:
         reset_pattern = "^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$"
     urlpatterns += patterns("django.contrib.auth.views",
                             url("^password_reset/$", "password_reset", name="password_reset"),
-                            url("^password_reset/done/$", "password_reset_done",name="password_reset_done"),
+                            url("^password_reset/done/$", "password_reset_done", name="password_reset_done"),
                             url("^reset/done/$", "password_reset_complete", name="password_reset_complete"),
                             url(reset_pattern, "password_reset_confirm", name="password_reset_confirm"),
-                            )
+    )
 
     urlpatterns += patterns("mezzanine.core.views",
                             url("^edit/$", "edit", name="edit"),
@@ -172,4 +162,4 @@ if "django.contrib.admin" in settings.INSTALLED_APPS:
                             url("^set_device/(?P<device>.*)/$", "set_device", name="set_device"),
                             url("^asset_proxy/$", "static_proxy", name="static_proxy"),
                             url("^displayable_links.js$", "displayable_links_js", name="displayable_links_js"),
-                            )
+    )
