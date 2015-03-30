@@ -1,5 +1,6 @@
 from django.db import models
-from image_cropping import ImageRatioField, ImageCropField
+from image_cropping import ImageRatioField
+from image_cropping import ImageCropField
 from easy_thumbnails.files import get_thumbnailer
 from django.core.validators import RegexValidator
 from adminsortable.models import Sortable

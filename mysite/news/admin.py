@@ -11,7 +11,7 @@ class NewsAdmin(ImageCroppingMixin, SortableModelAdmin):
 
     def image_url(self, obj):
         if not obj.image:
-            return '';
+            return ''
         return '<a target="_blank" href="' + obj.image.url + '">' + obj.image.url + '</a>'
     image_url.allow_tag = True
 
