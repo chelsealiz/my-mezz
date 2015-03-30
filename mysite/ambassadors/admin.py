@@ -9,11 +9,13 @@ class AmbassadorsAdmin(ImageCroppingMixin, admin.ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         if not obj:
-            kwargs['fields'] = ['name', 'position', 'link', 'original_image_width', 'original_image_height', 'image', ]
+            kwargs['fields'] = ['name', 'position', 'link', 'original_image_width',
+                                'original_image_height', 'image', ]
             kwargs['exclude'] = ['image_url', 'thumb_url', ]
         else:
-            kwargs['fields'] = ['name', 'position', 'link' , 'original_image_width', 'original_image_height', 'image',
-                                'thumb_image_width', 'thumb_image_height', 'min_free_cropping', 'image_url',
+            kwargs['fields'] = ['name', 'position', 'link', 'original_image_width',
+                                'original_image_height', 'image', 'thumb_image_width',
+                                'thumb_image_height', 'min_free_cropping', 'image_url',
                                 'thumb_url', ]
         return super(AmbassadorsAdmin, self).get_form(request, obj, **kwargs)
 

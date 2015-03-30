@@ -1,6 +1,7 @@
 from django.db import models
 from easy_thumbnails.files import get_thumbnailer
-from image_cropping import ImageRatioField, ImageCropField
+from image_cropping import ImageRatioField
+from image_cropping import ImageCropField
 from adminsortable.models import Sortable
 
 
@@ -14,7 +15,7 @@ class Ambassadors(models.Model):
     thumb_image_width = models.PositiveIntegerField(null=True)
     thumb_image_height = models.PositiveIntegerField(null=True)
 
-    image = ImageCropField(upload_to = 'uploaded_images')
+    image = ImageCropField(upload_to='uploaded_images')
     min_free_cropping = ImageRatioField('image', free_crop=True)
     link = models.CharField(max_length=255)
     order = models.PositiveIntegerField(null=True)
