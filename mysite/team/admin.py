@@ -9,14 +9,19 @@ class TeamAdmin(ImageCroppingMixin, admin.ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         if not obj:
-            kwargs['fields'] = ['name', 'position', 'original_image_width', 'original_image_height', 'facebook_url',
-                                'twitter_url', 'google_url','tumblr_url', 'github_url', 'OSF_url', 'linkedin_url',
+            kwargs['fields'] = ['name', 'position', 'original_image_width',
+                                'original_image_height', 'facebook_url',
+                                'twitter_url', 'google_url','tumblr_url',
+                                'github_url', 'OSF_url', 'linkedin_url',
                                 'personal_Email', 'personal_web', 'image', ]
             kwargs['exclude'] = ['image_url', 'thumb_url', ]
         else:
-            kwargs['fields'] = ['name', 'position', 'original_image_width', 'original_image_height', 'facebook_url',
-                                'twitter_url', 'google_url', 'tumblr_url', 'github_url', 'OSF_url', 'linkedin_url',
-                                'personal_Email', 'personal_web', 'image', 'thumb_image_width', 'thumb_image_height',
+            kwargs['fields'] = ['name', 'position', 'original_image_width',
+                                'original_image_height', 'facebook_url',
+                                'twitter_url', 'google_url', 'tumblr_url',
+                                'github_url', 'OSF_url', 'linkedin_url',
+                                'personal_Email', 'personal_web', 'image',
+                                'thumb_image_width', 'thumb_image_height',
                                 'min_free_cropping', 'image_url', 'thumb_url', ]
         return super(TeamAdmin, self).get_form(request, obj, **kwargs)
 
