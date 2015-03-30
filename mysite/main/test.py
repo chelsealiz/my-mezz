@@ -13,7 +13,6 @@ from django.test import TestCase
 from mysite.main.models import Pages
 
 
-
 class AboutPageView(TestCase):
     template_name = 'page/about.html'
 
