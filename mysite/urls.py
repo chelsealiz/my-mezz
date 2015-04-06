@@ -38,6 +38,7 @@ urlpatterns += patterns('',
                         # one out.
 
 
+                        # url(r'^(?i)blog', views.BlogMainView.as_view(), {'template': "page/blog.html"}, name='blog'),
                         url("^$", views.HomepageView.as_view(), {"template": "page/index.html"}, name="home"),
                         url(r'^(?i)$', views.HomepageView.as_view(), name='homepage'),
                         url(r'^(?i)aps', ApsPageView.as_view(), name='aps'),

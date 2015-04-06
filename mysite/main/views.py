@@ -7,7 +7,17 @@ from django.conf import settings
 from django.views import generic
 from ..team.models import Team
 from mysite.main.models import Pages
+from ..ambassadors.models import Ambassadors
 
+
+
+# class BlogMainView():
+#     template_name = 'page/blog.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(BlogView, self).get_context_data(**kwargs)
+#         context['page'] = Pages.objects.filter(slug=u'blog')
+#         return context
 
 class AboutPageView(generic.TemplateView):
     template_name = 'page/about.html'
@@ -32,7 +42,7 @@ class AmbassadorsPageView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AmbassadorsPageView, self).get_context_data(**kwargs)
-        context['ambassadors'] = Pages.objects.all()
+        context['ambassadors'] = Ambassadors.objects.all()
         return context
 
 
