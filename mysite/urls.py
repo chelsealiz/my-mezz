@@ -6,6 +6,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from mysite.main import views
+from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
 from mysite.main.views import AboutBoardPageView, AboutPageView, MissionPageView, PartnersPageView, \
     ServicePageView, GetInvolvedPageView, ApsPageView, CommunitiesPageView, \
@@ -38,7 +39,6 @@ urlpatterns += patterns('',
                         # one out.
 
 
-                        # url(r'^(?i)blog', views.BlogMainView.as_view(), {'template': "page/blog.html"}, name='blog'),
                         url("^$", views.HomepageView.as_view(), {"template": "page/index.html"}, name="home"),
                         url(r'^(?i)$', views.HomepageView.as_view(), name='homepage'),
                         url(r'^(?i)aps', ApsPageView.as_view(), name='aps'),
@@ -60,6 +60,7 @@ urlpatterns += patterns('',
                             name='involved_participate'),
 
 
+                        ("^", include("mezzanine.urls")),
                         ("^", include("mezzanine.generic.urls")),
 
 
