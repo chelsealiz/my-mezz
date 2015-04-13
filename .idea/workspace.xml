@@ -61,8 +61,8 @@
       <file leaf-file-name="blog_post_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/blog/blog_post_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31610942" vertical-offset="572" max-vertical-offset="2925">
-              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.3568216" vertical-offset="2177" max-vertical-offset="2925">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="2" selection-end-line="168" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -253,10 +253,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2534" />
-    <option name="y" value="-356" />
+    <option name="x" value="26" />
+    <option name="y" value="22" />
     <option name="width" value="1183" />
-    <option name="height" value="792" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -768,8 +768,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2534" y="-356" width="1183" height="792" extended-state="0" />
-    <editor active="true" />
+    <frame x="26" y="22" width="1183" height="788" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1202,8 +1202,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/blog/blog_post_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31610942" vertical-offset="572" max-vertical-offset="2925">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.3568216" vertical-offset="2177" max-vertical-offset="2925">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="2" selection-end-line="168" selection-end-column="16" />
           <folding />
         </state>
       </provider>
