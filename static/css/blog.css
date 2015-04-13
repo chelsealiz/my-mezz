@@ -38,3 +38,21 @@
     padding-top:25px;
     padding-bottom:50px;
 }
+
+.btn-sm{
+    float:right;
+    margin-top:75px;
+}
+
+.panel-default{
+    border:none;
+}
+
+.title{
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.container{
+    margin-bottom:20px;
+}
