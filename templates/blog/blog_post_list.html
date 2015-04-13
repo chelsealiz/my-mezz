@@ -40,7 +40,7 @@
 <div class="container margin-top-50 margin-bottom-100">
     <h1><strong>Blog</strong></h1>
     <p class="lead">Welcome to the COS blog. Have a look around and get updates from us and the rest of the world of Open Source Science.</p>
-    {#    <!-- Sorting-->#}
+{#        <!-- Sorting-->#}
 {#    {% if tag or category or year or month or author %}#}
 {#        {% block blog_post_list_filterinfo %}#}
 {#            <p>#}
@@ -160,13 +160,13 @@
 {% endblock %}
 
 <!-- Pagination-->
-{#{% pagination_for blog_posts %}#}
-{##}
-{#{% if settings.COMMENTS_DISQUS_SHORTNAME %}#}
-{#{% include "generic/includes/disqus_counts.html" %}#}
-{#{% endif %}#}
-{##}
-{#{% endblock %}#}
+{% pagination_for blog_posts %}
+
+{% if settings.COMMENTS_DISQUS_SHORTNAME %}
+{% include "generic/includes/disqus_counts.html" %}
+{% endif %}
+
+{% endblock %}
 
 
 

@@ -129,13 +129,13 @@
         </div>
         <div class="col-md-3 col-md-offset-2">
             <!-- Post Rating -->
-           {% block blog_post_detail_rating %}
-                <div class="panel panel-default rating">
-                    <div class="panel-body">
-                        {% rating_for blog_post %}
-                    </div>
-                </div>
-           {% endblock %}
+{#           {% block blog_post_detail_rating %}#}
+{#                <div class="panel panel-default rating">#}
+{#                    <div class="panel-body">#}
+{#                        {% rating_for blog_post %}#}
+{#                    </div>#}
+{#                </div>#}
+{#           {% endblock %}#}
         </div>
     </div>
 
@@ -160,14 +160,14 @@
 {#    </ul>#}
 {#    {% endblock %}#}
 
-    <!-- Comments and new comments -->
-    <div class="row">
-        <div class="col-md-11 col-md-offset-1">
-            {% block blog_post_detail_comments %}
-                {% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
-            {% endblock %}
-        </div>
-    </div>
+{#    <!-- Comments and new comments -->#}
+{#    <div class="row">#}
+{#        <div class="col-md-11 col-md-offset-1">#}
+{#            {% block blog_post_detail_comments %}#}
+{#                {% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}#}
+{#            {% endblock %}#}
+{#        </div>#}
+{#    </div>#}
 </div>
 {% endblock %}
 

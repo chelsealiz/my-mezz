@@ -1462,6 +1462,12 @@ font-size: 18px;
 	font-size: 17px;
 }
 
+.bullets{
+    list-style-type:circle !important;
+    margin-left:5px;
+    color:#000;
+}
+
 /*Team Blocks*/
 
 

@@ -1,7 +1,3 @@
-/*.blogPost{*/
-    /*border-bottom-color:#EBEBEB;*/
-/*}*/
-
 .link{
     text-decoration: none;
     padding-bottom: 10px;
@@ -54,5 +50,5 @@
 }
 
 .container{
-    margin-bottom:20px;
+    margin-bottom:40px;
 }
