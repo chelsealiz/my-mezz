@@ -12608,7 +12608,7 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 				if (t.removed)
 					return;
 
-				// Generic event handler
+				// generic event handler
 				if (t.onEvent.dispatch(t, e, o) !== false) {
 					// Specific event handler
 					t[lo[e.fakeType || e.type]].dispatch(t, e, o);

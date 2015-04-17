@@ -49,6 +49,22 @@
                     {% endspaceless %}
                 {% endif %}
             {% endblock %}
+            <!-- Number of Comments -->
+            {% block blog_post_detail_commentlink %}
+            <p>
+                {% if blog_post.allow_comments %}
+                    {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+                        (<a href="{{ blog_post.get_absolute_url }}#disqus_thread"
+                            data-disqus-identifier="{% disqus_id_for blog_post %}">{% spaceless %}
+                            {% trans "Comments" %}
+                        {% endspaceless %}</a>)
+                    {% else %}(<a href="#comments">{% spaceless %}
+                        {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+                        {% endspaceless %}</a>)
+                    {% endif %}
+                {% endif %}
+            </p>
+            {% endblock %}
         </div>
     </div>
     <div class="row">
@@ -79,7 +95,7 @@
     {% endif %}
 
     <div class="row">
-        <div class="col-md-6 col-md-offset-1 blogContent">
+        <div class="col-md-9 col-md-offset-1 blogContent">
             <!-- Content -->
             {% block blog_post_detail_content %}
                 {{ blog_post.content|richtext_filters|safe }}
@@ -87,7 +103,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5 col-md-offset-1">
+        <div class="col-md-3 col-md-offset-1 blogButton">
+            <button type="button" class="btn btn-primary">
+                <a href = "localhost:8000/blog" style="color:#FFF">
+                    Back to Blog
+                </a>
+            </button>
+        </div>
+        <div class="col-md-5 col-md-offset-3">
               <!-- Related Posts -->
             {% block blog_post_detail_related_posts %}
                 {% if blog_post.related_posts.all %}
@@ -103,9 +126,12 @@
             {% endblock %}
         </div>
     </div>
+    <!-- Comments and new comments -->
     <div class="row">
-        <div class="col-md-3 col-md-offset-2">
-            <a href="localhost:8000/blog">Back to Blog</a>
+        <div class="col-md-11 col-md-offset-1">
+            {% block blog_post_detail_comments %}
+                {% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
+            {% endblock %}
         </div>
     </div>
 </div>
