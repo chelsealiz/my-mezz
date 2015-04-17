@@ -1463,9 +1463,12 @@ font-size: 18px;
 }
 
 .bullets{
-    list-style-type:circle !important;
-    margin-left:5px;
+    list-style-type:disc !important;
     color:#000;
+}
+
+.indented{
+    margin-left:40px;
 }
 
 /*Team Blocks*/
