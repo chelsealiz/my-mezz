@@ -56,7 +56,9 @@
                                         <img class="img-thumbnail pull-left thumb" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 90 90 %}">
                                     </a>
                             {% else %}
-                                <img src="{% static 'img/cos_center_logo_small.png' %}"/>
+                                <a href="{{ blog_post.get_absolute_url }}">
+                                    <img class="img-thumbnail pull-left thumb no-border" src="{% static 'img/cos_center_logo_small.png' %}"/>
+                                </a>
                             {% endif %}
                         </div>
                         <div class="col-md-9 col-md-offset-1 right">
